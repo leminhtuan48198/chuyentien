@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyentien</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><input type="text" id="here"></td>
+        <td><select name="from" id="from" >
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+        </select></td>
+        <td>
+            <select name="to" id="to" >
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+            </select>
+        </td>
+        <td><button onclick="f()">Convert</button></td>
+    </tr>
+</table>
+<p id="re" style="color:blue"></p>
+<script>
+
+    function f(){
+        let m=document.getElementById('here').value;
+        let from=document.getElementById('from').value;
+        let to=document.getElementById('to').value;
+        let k
+        if (from===to)
+        {k=1}
+        else if(from=='USD') {k=23000}
+             else k=1/23000
+        let q=k*m;
+        document.getElementById('re').innerText="Result "+q+" "+to;
+    }
+</script>
+</body>
+</html>
